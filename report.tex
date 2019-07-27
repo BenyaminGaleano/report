@@ -15,6 +15,11 @@
 
 %configuraciones
 \graphicspath{{img/}}
+\newcommand{\Center}[1]{
+	\begin{center}
+		#1
+	\end{center}
+} %abreviatura para el ambiente center
 \renewcommand{\labelenumi}{$\bullet$} 
 \newenvironment{enumTab}{\begin{enumerate}[label=]\item \begin{enumerate}[label=$\bullet$]}{\end{enumerate}\end{enumerate}} %comando para realizar enumeraciones con cierto margen
 \newenvironment{block}[1]{\hspace{-0.8 cm}\textbf{\Large #1}}{\vspace{3 mm}} %ambiente importante que define una parte del reporte.
