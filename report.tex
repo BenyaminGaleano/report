@@ -20,6 +20,11 @@
 		#1
 	\end{center}
 } %abreviatura para el ambiente center
+\newcommand{\Page}[3][c]{
+	\begin{minipage}[#1]{#2\textwidth}
+		#3
+	\end{minipage}
+}
 \renewcommand{\labelenumi}{$\bullet$} 
 \newenvironment{enumTab}{\begin{enumerate}[label=]\item \begin{enumerate}[label=$\bullet$]}{\end{enumerate}\end{enumerate}} %comando para realizar enumeraciones con cierto margen
 \newenvironment{block}[1]{\hspace{-0.8 cm}\textbf{\Large #1}}{\vspace{3 mm}} %ambiente importante que define una parte del reporte.
@@ -34,134 +39,228 @@
 		\footnotesize\protect\tikz[baseline=-3pt]
 		\protect\node[scale=.7, circle, ball color = white]{\color{black}\Large\bf #1};
 		}
+	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \begin{document} 
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\input{pieces/header_v2} %incluimos la parte del header en el documento, note que header es como escribir dentro de un ambiente document por lo tanto no debe llevar definición de clase ni definiciones que se hagan exclusivamente en el preambulo.
 	
-	 \begin{block}{Objetivos:}
-	 \begin{enumTab}
-			
-	\item Que el estudiante se familiarice con los divisores de corriente y voltaje para formar un concepto sólido de la proporción entre resistencia , voltajes y corrientes en un circuito.
-	\end{enumTab}
-	 \end{block}
-		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%% OBJETIVOS %%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{block}{Objetivos:}
+		\begin{enumTab}
+			\item Entender el funcionamiento de los diodos emisores de luz en corriente directa.
+		\end{enumTab}
+	\end{block}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%% RESUMEN %%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
 	\begin{block}{Resumen:}
 		
-		En la pr'actica calculamos de manera te'orica los voltajes, corrientes, resistencias equivalentes, etc. mediante las herramientas conocidas como \textbf{\emph{Divisores}} las cuales ayudan a hacer un an'alisis m'as f'acil en la mayoria de casos. 
+		En la pr'actica se conectaron 4 LEDs de diferentes colores para ver el funcionamiento que estos presentaban cuando eran sometidos a una diferencia de potencial de 5V y la configuraci\'on serie prove\'ida en la pr\'actica.
 	\end{block}
 		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%% TEORIA %%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Teor'ia:}
 	
-	  \textbf{Los circuitos Serie} son una configuraci'on especial de componentes en un circuito, la caracter'istica de estos circuitos es que la corriente que fluye por todos sus miembros es la misma, por lo mismo la resistencia equivalente de resistores en serie es la suma de sus valores debido a que todos ellos se oponen a la misma corriente, a partir de la ley de Voltajes de \emph{Kirchhoff} se puede deducir la herramienta \textbf{\emph{divisor de voltaje}}:
+		\textbf{Los circuitos Serie} son una configuraci'on especial de componentes en un circuito, la caracter'istica de estos circuitos es que la corriente que fluye por todos sus miembros es la misma, por lo mismo la resistencia equivalente de resistores en serie es la suma de sus valores debido a que todos ellos se oponen a la misma corriente.
 	  
-	  \begin{figure}[H] %H obliga que la figura est'e exactamente en este lugar.
-	  \[V_i = V_f \biggl( \frac{R_i}{R_{\tiny EQ}} \biggr)\]
-	  \caption{\textbf{\emph{ecuaci'on de divisior de voltaje}}}
-	  \end{figure}
-	  
-	\begin{figure}[H]
-	\hfill\includegraphics[scale=0.5]{serie.png}\hspace*{\fill}
-	\caption{\textbf{\emph{Circuito Serie}}}
-	\end{figure}
-	
-	\textbf{Los circuitos en paralelo} tienen como caracter'istica especial que comparte un mismo voltaje, debido a que tienen dos nodos en com'un la tensi'on debe ser la misma para todos, gracias a la ley de corrientes de \emph{Kirchhoff} se puede deducir la segunda herramienta conocida como \textbf{\emph{divisor de Corriente}}:
-
 		\begin{figure}[H]
-		\[I_i = I_f \biggl( \frac{R_{\tiny EQ}}{R_i} \biggr)\]
-		\caption{\textbf{\emph{ecuaci'on de divisor de Corriente}}}
+		\hfill\includegraphics[scale=0.5]{serie.png}\hspace*{\fill}
+		\caption{\textbf{\emph{Circuito Serie}}}
 		\end{figure}
-	
-		 \begin{figure}[H]
-		 \hfill\includegraphics[scale=.5]{paralelo.png}\hspace*{\fill}
-		 \caption{\textbf{\emph{Circuito Paralelo}}}
-		 \end{figure}
+		
+		\textbf{\emph{LED}} es un diodo semiconductor que por sur propiedades de construcci\'on es capaz de emitir luz como sus siglas los dicen, se trata de un diodo de uni\'on tipo p-n en el cual cuando la corriente fluye a trav\'es del mismo este se activa y es capaz de emitir luz, un dato importante que cabe resaltar de un LED es que el color varia según el ancho de la conocida banda prohibida.
+		
+		\begin{minipage}{.5\textwidth}
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.4]{LED.png}
+					\caption{\textbf{LED}}
+				}
+			\end{figure}
+		\end{minipage} 
+		\begin{minipage}{.5\textwidth}
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.8]{Led_esquematico.png}
+					\caption{\textbf{diagrama esquematico LED}}
+				}
+			\end{figure}
+		\end{minipage}
 	\end{block}
 		
-	%datos practicos
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%% DATOS PRACTICOS %%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Datos Pr'acticos:}
+		
+		\vspace*{.5cm}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{vamarillo.png}
+					\caption{\textbf{voltaje LED amarillo}}
+				}
+			\end{figure}
+		}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{iamarillo.png}
+					\caption{\textbf{corriente LED amarillo}}
+				}
+			\end{figure}
+		}
 	
-	En la siguiente imagen se podr'a ver la construcci'on del circuito proveido en la pr'actica, tambi'en se muestra la Resistencia ``Pr'actica" que cae sobre el circuito.
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{vverde.png}
+					\caption{\textbf{voltaje LED verde}}
+				}
+			\end{figure}
+		}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{iverde.png}
+					\caption{\textbf{corriente LED verde}}
+				}
+			\end{figure}
+		}
 	
-	\begin{figure}[H]
-	\hfill\includegraphics[width=.32\textwidth]{image.png}\hspace*{\fill}
-	\caption{\textbf{\emph{Resistencia equivalente del 'ultimo circuito}}}
-	\end{figure}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{vrojo.png}
+					\caption{\textbf{voltaje LED rojo}}
+				}
+			\end{figure}
+		}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{irojo.png}
+					\caption{\textbf{corriente LED rojo}}
+				}
+			\end{figure}
+		}
 	
-	\begin{figure}[H]
-	\hfill\includegraphics[width=.32\textwidth]{circ.jpg} \hspace*{\fill}
-	\caption{\textbf{\emph{circuito físico (el 'ultimo)}}}
-	\end{figure}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{vazul.png}
+					\caption{\textbf{voltaje LED azul}}
+				}
+			\end{figure}
+		}
+		\Page{.5}{
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.5]{iazul.png}
+					\caption{\textbf{corriente LED azul}}
+				}
+			\end{figure}
+		}
 	
-	\note{debido a que las puntas que usaba en la pr'actica no estaban buenas y no me percat'e a tiempo no me dio tiempo de realizar m'as cosas.}
+	\vspace*{0.6cm}
+	\Center{
+		\LARGE
+		\begin{tabular}{|ccc|}
+			\hline
+			\rowcolor{yellow}
+			\textbf{Color}&\textbf{Voltaje}&\textbf{Corriente}\\
+			\hline
+			\hline
+			Amarillo&1.95V&7.27mA\\\hline
+			Verde&2.03V&6.86mA\\\hline
+			Rojo&1.93V&7.21mA\\\hline
+			Azul&2.84V&4.58mA\\\hline
+		\end{tabular}
+	}
 	
 	\end{block}
 	
-	
-	\begin{block}{C'alculos Te'oricos:\\}
-	
-	
-	{\large \bfseries{Incisos Laboratorio \#4\\}}
-	
-	\begin{question}{4}{an'alisis del circuito 1}
-	\(R_{EQ}=1k\Omega+4.7k\Omega=5.7k\Omega\); \(I_f=\frac{V_f}{R_{EQ}}=\frac{5V}{5.7k\Omega}=877\mu A\)\\
-	\(V_x=R_xI_f=(1k\Omega)(877\mu A)=877mV\); \(V_y=R_yI_f=(4.7k\Omega)(877\mu A)=4.12V\)
-	
-	\vspace{.5 cm}
-	\begin{tabular}{cccc}
-	\hline
-	Voltaje & valor te'orico. & valor pr'actico. & Error (\%)\\
-	\hline\hline
-	\(V_x\) & 877mV & --- & ---\\
-	\hline
-	\(V_y\) & 4.12V & --- & ---\\
-	\hline
-	\end{tabular}
-
-	\end{question}
-	
-	\begin{question}{6}{mismos calculos del inciso 4, pero con \(R_x = 4.7k\Omega\)}
-	
-	\(R_{EQ}=4.7k\Omega+4.7k\Omega=9.4k\Omega\); \(I_f=\frac{V_f}{R_{EQ}}=\frac{5V}{9.4k\Omega}=532\mu A\)\\
-	\(V_x=R_xI_f=(4.7k\Omega)(532\mu A)=2.5V\); \(V_y=R_yI_f=(4.7k\Omega)(532\mu A)=2.5V\)
-	
-	\vspace{.5 cm}
-	\begin{tabular}{cccc}
-	\hline
-	Voltaje & valor te'orico. & valor pr'actico. & Error (\%)\\
-	\hline\hline
-	\(V_x\) & 2.5V & --- & ---\\
-	\hline
-	\(V_y\) & 2.5V & --- & ---\\
-	\hline
-	\end{tabular}
-	\end{question}
-	
-	\vspace{3 mm}
-	\begin{question}{7}{Calcular}
-	La resistencia total del circuito se puede escribir de la siguiente forma: \(R_{EQ}=3k\Omega+R_?\) siendo \(R_?=R_1||R_2\), calculemos entonces a \(R_?\)\\
-	\[3V=12V\bigl( \frac{2k\Omega}{3k\Omega+R_?} \bigr)\] \[3V(3K\Omega + R_?)=24VK\Omega\] \[9VK\Omega +3R_?=24VK\Omega\] \[3VR_?=15VK\Omega\] \[R_?=5K\Omega\] \(\therefore\) \(R_1=10k\Omega\) y \(R_2=10k\Omega\).
-	\end{question}
-	
-	\begin{question}{8}{Calcule  \(V_a\) \(V_b\) \(I_1\) \(I_2\) \(I_3\)}
-	\[V_a = 9V\]
-	\[I_1 = \frac{V_f}{R_{EQ}}=1.5A\]
-	\[V_b = 12V\bigl(\frac{1K\Omega}{8K\Omega}\bigr)=1.5V\]
-	\[I_1=I_2\]
-	\hfill\(I_1 = 0.75\) y \(I_2 = 0.75\) esto ya que la suma debe ser igual a 1.5A y como ambos tienen la misma magnitud deber ser la misma para ambos.\hspace*{\fill}
-	\end{question}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%% CALCULOS TEORICOS %%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{block}{C\'alculos Te\'oricos:\\}
+		
+		\textbf{Para Corriente}\\
+		\Page{.33}{$V_1-V_R-V_D=0$}
+		\Page{.33}{$5v-I(V)390\Omega-V=0$}
+		\Page{.33}{$$I(V)=\frac{5v-V}{390\Omega}$$}
+		
+		\textbf{C\'alculos Te\'oricos}\\
+		\Page{.33}{$I(3v)=5.12mA$ (LED azul)}
+		\Page{.33}{$I(1.8v)=8.21mA$ (LED rojo)}
+		\Page{.35}{$I(2.1v)=7.44mA$ (LED amarillo)}
+		\Page{.33}{$I(2.2v)=7.44mA$ (LED verde)}
+		
+		\textbf{C\'alculos de Pr\'actica}\\
+		\Page{.33}{$I(2.84v)=5.54mA$ (LED azul)}
+		\Page{.33}{$I(1.93v)=7.87mA$ (LED rojo)}
+		\Page{.38}{$I(1.95v)=7.82mA$ (LED amarillo)}
+		\Page{.33}{$I(2.03v)=7.62mA$ (LED verde)}
+		
+		\vspace{.5cm}
+		\Large
+		\Center{
+			\begin{tabular}{|c|c|}
+				\hline
+				\rowcolor{yellow}
+				\multicolumn{2}{|c|}{Error Porcentual}\\
+				\hline
+				\rowcolor{yellow}
+				Color&Error\\
+				\hline
+				\hline
+				Amarillo&5.11\%\\
+				\hline
+				Verde&7.19\%\\
+				\hline
+				azul&8.2\%\\
+				\hline
+				rojo&4.14\%\\
+				\hline
+			\end{tabular}
+		}
+		
+		
 	\end{block}
 			
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%% CONCLUSIONES %%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\vspace{3 mm}
 	\begin{block}{Conclusiones:}
 	\begin{enumTab}
-	\item Utilizar los divisores es realmente importante para el an'alisis de circuitos ya que se puede expresar la variable solamente en t'erminos de ella misma y de la resistencia.
-	\item La mediciones te'oricas siempre se ven afectadas por el error de los instrumentos, del humano e incluso de los mismos componentes.
+		\item Los LEDs por sus propiedades de construcci\'on son capaces de emitir luz al ambiente.
+		\item Es necesario colocar una resistencia en serie al LED, ya que estos diodos tienen una baja resistencia, entonces el diodo se quemar\'ia sino la tuviera.
+		\item La separaci\'on entre las bandas es la que influye en el color que emite el diodo ya que esta ligada a la longitud de onda de la misma.
 	\end{enumTab}
 	\end{block}
 		
+		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Bibliograf'ia:}
 	
-		\bib{George J. Hunt}{http://georgejhunt.com/olpc/files/spanish/DC/DC\_5.html}
+		\bib{Circuito Serie - Wikipedia}{https://es.wikipedia.org/wiki/Circuito\_en\_serie}
+		\hspace*{.5cm}\bib{LED - Wikipedia}{https://es.wikipedia.org/wiki/Led}
 	\end{block}
 		
 \end{document}
