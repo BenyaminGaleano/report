@@ -46,7 +46,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 
 \begin{document} 
-	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,16 +56,16 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Objetivos:}
 		\begin{enumTab}
-			\item Entender el funcionamiento de los diodos emisores de luz en corriente directa.
+			\item Comprender para que sirve el punto de operaci\'on y como se afecta cuando esta en polarizaci\'on por divisor de voltaje.
 		\end{enumTab}
 	\end{block}
-
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%% RESUMEN %%%%%%%%%%%%%%%
+	%%%%%%%%%%%%% RESUMEN %%%%%%%%%%%%%%%   
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
 	\begin{block}{Resumen:}
 		
-		En la pr'actica se conectaron 4 LEDs de diferentes colores para ver el funcionamiento que estos presentaban cuando eran sometidos a una diferencia de potencial de 5V y la configuraci\'on serie prove\'ida en la pr\'actica.
+		En la pr\'actica se busc\'o informaci\'on sobre el BJT, con la cual se armaron los circuitos prove\'idos en el archivo del laboratorio, despu\'es de haberlo terminado de armar, se procedi\'o a calcular el $V_B$, $I_E$ y $V_{CE}$.
 	\end{block}
 		
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,31 +73,21 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Teor'ia:}
 	
-		\textbf{Los circuitos Serie} son una configuraci'on especial de componentes en un circuito, la caracter'istica de estos circuitos es que la corriente que fluye por todos sus miembros es la misma, por lo mismo la resistencia equivalente de resistores en serie es la suma de sus valores debido a que todos ellos se oponen a la misma corriente.
-	  
+		\textbf{BJT} Es un componente semiconductor el cual se modela como una fuente de corriente controlada por corriente, esto es debido que la corriente del colector es directamente proporcional a la corriente en la base,.
+		
+		
 		\begin{figure}[H]
-		\hfill\includegraphics[scale=0.5]{serie.png}\hspace*{\fill}
-		\caption{\textbf{\emph{Circuito Serie}}}
+			\Center{
+				\includegraphics[scale=.4]{BJT.jpg}
+				\caption{\textbf{BJT}}
+			}
 		\end{figure}
+	
+		\textbf{Punto de operaci\'on} Es la coordenada denotada por ($V_{CE}$,$I_C$) en el plano cartesiano $R^2$ donde el eje de las abscisas es nombrado por el voltaje de colector a emisor y el de las ordenadas por la corriente en el colector, este punto es fijo y representa como su nombre lo dice el punto donde est\'a operando.
 		
-		\textbf{\emph{LED}} es un diodo semiconductor que por sur propiedades de construcci\'on es capaz de emitir luz como sus siglas los dicen, se trata de un diodo de uni\'on tipo p-n en el cual cuando la corriente fluye a trav\'es del mismo este se activa y es capaz de emitir luz, un dato importante que cabe resaltar de un LED es que el color varia según el ancho de la conocida banda prohibida.
+		\textbf{Recta de Carga} cuando el punto de operaci\'on se ve afectada por causa de cambios en Vcc, etc, el nuevo punto quedará sobre dicha recta.
 		
-		\begin{minipage}{.5\textwidth}
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.4]{LED.png}
-					\caption{\textbf{LED}}
-				}
-			\end{figure}
-		\end{minipage} 
-		\begin{minipage}{.5\textwidth}
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.8]{Led_esquematico.png}
-					\caption{\textbf{diagrama esquematico LED}}
-				}
-			\end{figure}
-		\end{minipage}
+	
 	\end{block}
 		
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,86 +99,26 @@
 		\Page{.5}{
 			\begin{figure}[H]
 				\Center{
-					\includegraphics[scale=.5]{vamarillo.png}
-					\caption{\textbf{voltaje LED amarillo}}
+					\includegraphics[scale=.5]{Vce.png}
+					\caption{\textbf{Voltaje Colector Emisor}}
 				}
 			\end{figure}
 		}
 		\Page{.5}{
 			\begin{figure}[H]
 				\Center{
-					\includegraphics[scale=.5]{iamarillo.png}
-					\caption{\textbf{corriente LED amarillo}}
+					\includegraphics[scale=.5]{Ie.png}
+					\caption{\textbf{corriente Emisor}}
 				}
 			\end{figure}
 		}
 	
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{vverde.png}
-					\caption{\textbf{voltaje LED verde}}
-				}
-			\end{figure}
-		}
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{iverde.png}
-					\caption{\textbf{corriente LED verde}}
-				}
-			\end{figure}
-		}
-	
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{vrojo.png}
-					\caption{\textbf{voltaje LED rojo}}
-				}
-			\end{figure}
-		}
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{irojo.png}
-					\caption{\textbf{corriente LED rojo}}
-				}
-			\end{figure}
-		}
-	
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{vazul.png}
-					\caption{\textbf{voltaje LED azul}}
-				}
-			\end{figure}
-		}
-		\Page{.5}{
-			\begin{figure}[H]
-				\Center{
-					\includegraphics[scale=.5]{iazul.png}
-					\caption{\textbf{corriente LED azul}}
-				}
-			\end{figure}
-		}
-	
-	\vspace*{0.6cm}
-	\Center{
-		\LARGE
-		\begin{tabular}{|ccc|}
-			\hline
-			\rowcolor{yellow}
-			\textbf{Color}&\textbf{Voltaje}&\textbf{Corriente}\\
-			\hline
-			\hline
-			Amarillo&1.95V&7.27mA\\\hline
-			Verde&2.03V&6.86mA\\\hline
-			Rojo&1.93V&7.21mA\\\hline
-			Azul&2.84V&4.58mA\\\hline
-		\end{tabular}
-	}
+		\begin{figure}[H]
+			\Center{
+				\includegraphics[scale=.4]{Vb.PNG}
+				\caption{\textbf{Voltaje Base}}
+			}
+		\end{figure}
 	
 	\end{block}
 	
@@ -198,46 +127,12 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{C\'alculos Te\'oricos:\\}
 		
-		\textbf{Para Corriente}\\
-		\Page{.33}{$V_1-V_R-V_D=0$}
-		\Page{.33}{$5v-I(V)390\Omega-V=0$}
-		\Page{.33}{$$I(V)=\frac{5v-V}{390\Omega}$$}
+		\textbf{an\'alisis aproximado}\\
+		\Page{.33}{$100\leq\beta\leq300\therefore 10R_2 \leq\beta R_E$}
+		\Page{.2}{$V_B=12\frac{1k\Omega}{2k\Omega}=6V$}
+		\Page{.2}{$I_E=\frac{5.3V}{1k\Omega}=5.3mA$}
 		
-		\textbf{C\'alculos Te\'oricos}\\
-		\Page{.33}{$I(3v)=5.12mA$ (LED azul)}
-		\Page{.33}{$I(1.8v)=8.21mA$ (LED rojo)}
-		\Page{.35}{$I(2.1v)=7.44mA$ (LED amarillo)}
-		\Page{.33}{$I(2.2v)=7.44mA$ (LED verde)}
-		
-		\textbf{C\'alculos de Pr\'actica}\\
-		\Page{.33}{$I(2.84v)=5.54mA$ (LED azul)}
-		\Page{.33}{$I(1.93v)=7.87mA$ (LED rojo)}
-		\Page{.38}{$I(1.95v)=7.82mA$ (LED amarillo)}
-		\Page{.33}{$I(2.03v)=7.62mA$ (LED verde)}
-		
-		\vspace{.5cm}
-		\Large
-		\Center{
-			\begin{tabular}{|c|c|}
-				\hline
-				\rowcolor{yellow}
-				\multicolumn{2}{|c|}{Error Porcentual}\\
-				\hline
-				\rowcolor{yellow}
-				Color&Error\\
-				\hline
-				\hline
-				Amarillo&5.11\%\\
-				\hline
-				Verde&7.19\%\\
-				\hline
-				azul&8.2\%\\
-				\hline
-				rojo&4.14\%\\
-				\hline
-			\end{tabular}
-		}
-		
+		\hspace*{-.5cm}$V_{CE}=12V-I_CR_C-I_ER_E=1.4V$
 		
 	\end{block}
 			
@@ -247,9 +142,8 @@
 	\vspace{3 mm}
 	\begin{block}{Conclusiones:}
 	\begin{enumTab}
-		\item Los LEDs por sus propiedades de construcci\'on son capaces de emitir luz al ambiente.
-		\item Es necesario colocar una resistencia en serie al LED, ya que estos diodos tienen una baja resistencia, entonces el diodo se quemar\'ia sino la tuviera.
-		\item La separaci\'on entre las bandas es la que influye en el color que emite el diodo ya que esta ligada a la longitud de onda de la misma.
+		\item El an\'alisis de un circuito polarizado por divisor de voltaje puede volverse muy sencillo si se cumple la regla $10R_2 \leq\beta R_E$.
+		\item Conocer la recta de carga es importante para saber la posici\'on de cualquier punto operaci\'on del BJT.
 	\end{enumTab}
 	\end{block}
 		
@@ -259,8 +153,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{block}{Bibliograf'ia:}
 	
-		\bib{Circuito Serie - Wikipedia}{https://es.wikipedia.org/wiki/Circuito\_en\_serie}
-		\hspace*{.5cm}\bib{LED - Wikipedia}{https://es.wikipedia.org/wiki/Led}
+		\bib{BJT - Wikipedia}{https://es.wikipedia.org/wiki/Transistor\_de\_uni\%C3\%B3n\_bipolar}
 	\end{block}
 		
 \end{document}
