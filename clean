@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -e '\e[33m[clean]: Limpiando...\e[90m\n'
+
+while IFS= read -r line
+    do
+        rm -f -r -v $line
+done <<< $(grep -v '^#' < .gitignore)

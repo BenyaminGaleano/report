@@ -1,0 +1,26 @@
+#! /bin/bash
+if [ "$1" = '' ];
+    then 
+        echo -e '\e[31mPara crear un nuevo proyecto use:'
+        echo './create el_nombre_proyecto'
+        exit
+fi
+echo -e ''
+read -p 'Descargar utilidades (enter) no, escriba algo y presione (enter) si: ' response
+echo -e '\e[36m'
+if [ "$response" != '' ];
+    then
+    ./update
+fi
+./clean
+mkdir ../$1/
+cp -r -f ./* ../$1/
+echo -e '\n\e[32m[create]: Terminado :)\n\e[96m'
+echo -e '\n[create]: Abriendo carpeta de archivos'
+nautilus ../$1 &
+if [ `which texstudio` != '' ];
+    then 
+        echo '[create]: Abriendo TexStudio'
+    texstudio ../$1/report.tex &
+fi
+echo ''
