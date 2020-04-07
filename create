@@ -15,5 +15,12 @@ fi
 ./clean
 mkdir ../$1/
 cp -r -f ./* ../$1/
-echo -e '\n\e[32m[create]: Terminado :)\n\e[96m'
-./open
+echo -e '\n\e[32m[create]: Terminado :)'
+echo -e '\n\e[96m[open]: Abriendo carpeta de archivos'
+nautilus ../$1 &
+if [ `which texstudio` != '' ];
+    then 
+        echo '[open]: Abriendo TexStudio'
+    texstudio --no-session ../$1/report.tex ../$1/pieces/header.tex ../$1/referencias.bib &
+fi
+echo ''
