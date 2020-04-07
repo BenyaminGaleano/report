@@ -1,5 +1,5 @@
 # Report
-Reporte tipo para asignaciones de la universidad
+Reporte tipo para asignaciones de la universidad. pieces/header.tex es donde se modifican los datos personales
 
 ### Imagenes
 Si las imagenes se encuentran en **/img/** unicamente es necesario colocar el nombre de la imagen.
