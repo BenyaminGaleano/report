@@ -39,46 +39,103 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\input{pieces/header_v2} %incluimos la parte del header en el documento, note que header es como escribir dentro de un ambiente document por lo tanto no debe llevar definición de clase ni definiciones que se hagan exclusivamente en el preambulo.
+	\input{pieces/header} %incluimos la parte del header en el documento, note que header es como escribir dentro de un ambiente document por lo tanto no debe llevar definición de clase ni definiciones que se hagan exclusivamente en el preambulo.
 		
 	\begin{block}{Objetivos:}
 		\begin{enumerate}
-			\item Que el estudiante se familiarice con el funcionamiento de un multiplexor y que logre
-			diseñar y construir lógica combinacional con dispositivos de mediana integración.
+			\item Poder preparar report para usarse.
+			\item Capacidad de aprovechar report.tex y sus agregados.
 		\end{enumerate}
 	\end{block}
 
 	\begin{block}{Materiales:}
 		\begin{enumerate}
-			\item Fuente de 5VDC (Proporcionada por el Laboratorio).
-			\item Punta Lógica.
-			\item 1 Bread Board.
-			\item Pinzas para cortar y pelar alambre.
-			\item 1 metro de cable UTP.
-			\item 1 DIP switch de 4 polos.
-			\item 1 Circuito Integrado 74LS151.
-			\item 1 LED Rojo.
-			\item 1 Resistor de 180k$\Omega$.
-			\item 3 Resistores de 10k$\Omega$
+			\item algo donde correr \LaTeX \hspace{3mm};V
+			\item conexión a internet.
 		\end{enumerate}
 	\end{block}
 
 	\begin{block}{Resumen:\\}
 		
-		En base al diagrama entregado para hacer el laboratorio, se buscó información del IC 74LS151 tipo N y en base al diagrama se construyó dicho circuito, por la forma construcción que se empleo el led encendía con 0s lógicos y es por esto que se tomó la salida negada para obtener dicho comportamiento.
+		En este documento se enseñara lo necesario para poder utilizar al máximo report y sus dependencias como por ejemplo Utilidades que es otro Repositorio utilizado para tener un mayor orden.
 	\end{block}
 
 	\begin{block}{Marco Teórico:\\}
 		
-		Los \textbf{Multiplexores} son circuitos combinacionales que tienen la característica dejar pasar una señal de las $2^n$ señales en función de sus $n$ selectores, se utilizan para ``colar'' la información. Como es de suponer sólo tiene una salida que resulta ser la seleccionada por los selectores. Este es un caso particular de los decodificadores.
-		\newpage
+		El repositorio \textbf{Utilidades} contiene el paquete utilidades el cual tiene algunos comandos y ambientes que pueden facilitar crear un reporte, estos pueden cambiar pero hasta el momento existen los siguientes:
 		
-		\begin{figure}[H]
+		\begin{enumerate}
+			\item \textbf{\textbackslash Center\{...\}} centra el contenido ejemplo:
+			\begin{figure}[H]
+				\Center{
+					\includegraphics[scale=.6]{multiplexor}
+					\caption{Información de \textbf{SN74LS151} multiplexor empleado para el laboratorio}
+				}
+			\end{figure}
+		
+			\item \textbf{\textbackslash Page[align]\{scale\}\{...\}} crea un bloque con el porcentaje dado (``scale'' que debe ser de la forma $.[$1-9$]^+$, ejemplos: .5, .3, .333, etc), align es una letra soportada por minipage ya que es un resumen del mismo por defecto es c. Ejemplo:
+			
+			\begin{figure}[H]
+				\Page{.5}{
+					\Center{
+						\begin{karnaugh-map}[4][2][1][$D_1D_0$][$D_2$]
+							\minterms{0,2,3,7}
+							\implicant{3}{7}
+							\implicantedge{0}{0}{2}{2}
+						\end{karnaugh-map}
+					}
+					\caption{mapa de karnaugh}
+				} \Page{.5}{
+					\Center{
+						$$\displaystyle\bar{D_2}\bar{D_0}+D_1D_0$$
+					}
+					\caption{Expresión}
+				}
+			\end{figure}
+		
+			\item \textbf{\textbackslash Note\{...\}} crea una nota, ejemplo:\\\\
+			\Note{Esta es una nota xD la cual no se tabula y tiene un tamaño pequeño}
+			
+			\item \textbf{\textbackslash enumBall\{...\}} crea una bola con el contenido, ejemplo:
+			
+			\renewcommand{\textballcolor}{white}
+			
 			\Center{
-				\includegraphics[scale=.6]{multiplexor}
-				\caption{Información de \textbf{SN74LS151} multiplexor empleado para el laboratorio}
+				\enumBall{...}
 			}
-		\end{figure}
+			
+			\renewcommand{\ballcolor}{green}
+			
+			\begin{enumerate}[label=\enumBall{\arabic*}]
+				\item primera bola
+				\item segunda bola
+			\end{enumerate}
+		
+			\Note{Como se puede ver las bolas pueden ser modificadas redefiniendo los comandos ballcolor y textballcolor y utilizar la combinación deseada}
+			
+			\item el ambiente \textbf{block} que como se puede ver se utiliza para hacer bloques en el reporte, no contiene gran cosa, pero puede ser que en el futuro se le de mayor utilidad.
+			
+			\item el ambiente \textbf{questions} y su comando \textbf{\textbackslash question\{...\}} son una forma de agregar preguntas y respuestas en el reporte, el ambiente recibe un argumento opcional que es el título del cuestionario por defecto es cuestionario, ejemplo:
+			
+			\begin{questions}[Preguntas Tontas]
+				
+				\question{¿Cuánto es 1+1?} la respuesta a dicha operación es $\sqrt{2}$ XD
+				
+				\question{¿Por qué todo junto se escribe todos separado, pero separado se escribe todo junto?} Saber we, no sé de que me hablas xs jajaja
+
+				\question{¿Por qué escribo todo esto?} Para que sepan para que chuchas sirve cada cosa jajaja
+			\end{questions}	
+			 \newpage % Nueva pagina para que no se vea todo junto
+			\begin{questions}
+				
+				\question{La pregunta} La respuesta
+				
+				\question{La pregunta} La respuesta
+				
+				\question{La pregunta} La respuesta
+				
+			\end{questions}
+		\end{enumerate}
 		
 	\end{block}
 
@@ -127,8 +184,8 @@
 
 	\begin{block}{Conclusiones:\\}
 		\begin{enumerate}
-			\item Poder elegir entre múltiples señales es muy importante cuando se diseñan arquitecturas.
-			\item Los multiplexores pueden ser utilizados para obtener una lectura entre varios flip-flops y así poder obtener una palabra en especifico.
+			\item Conclusión 1
+			\item Conclusión 2
 		\end{enumerate}
 	\end{block}
 
