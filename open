@@ -1,9 +1,9 @@
 #!/bin/bash
-echo -e '[create]: Abriendo carpeta de archivos'
+echo -e '[open]: Abriendo carpeta de archivos'
 nautilus ../$1 &
 if [ `which texstudio` != '' ];
     then 
-        echo '[create]: Abriendo TexStudio'
+        echo '[open]: Abriendo TexStudio'
     texstudio --no-session ../$1/report.tex ../$1/pieces/header.tex ../$1/referencias.bib &
 fi
 echo ''
