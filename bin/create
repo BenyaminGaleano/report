@@ -14,13 +14,21 @@ if [ "$response" != '' ];
 fi
 ./clean
 mkdir ../$1/
-cp -r -f ./* ../$1/
+cp -rfv ./* ../$1/
+cp -fv .gitignore ../$1/
 echo -e '\n\e[32m[create]: Terminado :)'
 echo -e '\n\e[96m[open]: Abriendo carpeta de archivos'
-nautilus ../$1 &
+exo-open --launch FileManager --working-directory ../$1
 if [ `which texstudio` != '' ];
     then 
         echo '[open]: Abriendo TexStudio'
     texstudio --no-session ../$1/report.tex ../$1/pieces/header.tex ../$1/referencias.bib &
+fi
+echo -e '\e[32m\n[open]: Desea abrir report.pdf?'
+read -p '(enter) no, escriba algo y (enter) si: ' res
+if [ "$res" != '' ];
+    then 
+        echo '[open]: Abriendo PDF'
+    gio open ../$1/report.pdf
 fi
 echo ''

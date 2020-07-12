@@ -1,0 +1,8 @@
+#!/bin/bash
+rm -rf ./utilidades
+git clone https://github.com/BenyaminGaleano/utilidades.git
+echo -e '\e[32m\n[update]: utilidades descargadas\e[39m'
+echo ''
+mv -vf ./utilidades/utilidades.sty .
+rm -rf ./utilidades
+echo ''

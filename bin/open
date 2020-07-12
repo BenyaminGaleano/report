@@ -1,9 +1,16 @@
 #!/bin/bash
 echo -e '\n\e[96m[open]: Abriendo carpeta de archivos'
-nautilus . &
+exo-open --launch FileManager
 if [ `which texstudio` != '' ];
     then 
         echo '[open]: Abriendo TexStudio'
     texstudio --no-session ./report.tex ./pieces/header.tex ./referencias.bib &
+fi
+echo -e '\e[32m\n[open]: Desea abrir report.pdf?'
+read -p '(enter) no, escriba algo y (enter) si: ' res
+if [ "$res" != '' ];
+    then 
+        echo '[open]: Abriendo PDF'
+    gio open ./report.pdf
 fi
 echo ''
