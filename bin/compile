@@ -1,2 +1,4 @@
 #!/bin/bash
-pdflatex -synctex=1 -interaction=nonstopmode report.tex pieces/header.tex
+pdflatex -synctex=1 -interaction=nonstopmode report.tex 
+bibtex report.aux
+pdflatex -synctex=1 -interaction=nonstopmode report.tex 
