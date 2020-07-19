@@ -10,9 +10,9 @@ read -p 'Descargar utilidades (enter) no, escriba algo y presione (enter) si: ' 
 echo -e '\e[36m'
 if [ "$response" != '' ];
     then
-    ./update
+    bin/update
 fi
-./clean
+bin/clean
 mkdir ../$1/
 cp -rfv ./* ../$1/
 cp -fv .gitignore ../$1/
