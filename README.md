@@ -8,7 +8,7 @@ Si las imagenes se encuentran en **/img/** unicamente es necesario colocar el no
 vaya al archivo referencias.bib y coloque sus fuentes en el formato establecido.
 
 ### Instalación
-Si tiene Python instalado puedo optar por instalar [**texpj**](https://pypi.org/project/texpj/) y así tener una forma sencilla de administrar
+Si tiene Python instalado puedo optar por instalar [texpj](https://pypi.org/project/texpj/) y así tener una forma sencilla de administrar
 plantillas, si ya tiene instalado texpj ejecute los siguiente:
 
 ```
