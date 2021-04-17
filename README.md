@@ -7,12 +7,17 @@ Si las imagenes se encuentran en **/img/** unicamente es necesario colocar el no
 ### Bibliografia
 vaya al archivo referencias.bib y coloque sus fuentes en el formato establecido.
 
-### Windows
-Por el momento no he hecho instaladores para windows así que toca manual.
+### Instalación
+Si tiene Python instalado puedo optar por instalar (**texpj**)[https://pypi.org/project/texpj/] y así tener una forma sencilla de administrar
+plantillas, si ya tiene instalado texpj ejecute los siguiente:
 
-Descargue [Utilidades](https://github.com/BenyaminGaleano/utilidades.git) y coloque los archivos en la misma carpeta de su proyecto.
+```
+texpj install BenyaminGaleano/report reporte "reporte base para universidad"
+```
 
-### Linux
+Para que funcione se necesita que tenga instalado **git**.
+
+### Linux (En progreso en texpj script)
 Puede utilizar estos comandos y ahorrarse acciones:
 - **bin/clean** limpia todos los archivos no necesarios en el proyecto.
 - **bin/update** descarga [Utilidades](https://github.com/BenyaminGaleano/utilidades.git) y coloca el archivo en el scope.
